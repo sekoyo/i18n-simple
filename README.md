@@ -41,23 +41,23 @@ module.exports = {
 It is recommended you list your available languages with the `supportedLangs` option to save the module having to make a file I/O check.
 
 	i18n.init({
-		supportedLangs: ['en-GB', 'pt-BR', 'pt-PT'],
+		localePath: __dirname + 'i18n/', // Defaults to locale/.
+		fallbackLang: 'en-GB', // If lang and fallbackPrefs didn't exist or failed.
+		supportedLangs: ['en-GB', 'pt-BR', 'pt-PT'], // Avoid file I/O checks.
 		setLang: 'en-GB', // Set the initial language.
-		fallbackPrefs: {
-			'pt-BR': ['pt-PT']
-		},
-		tplLookupName: 'l' // Default template helper name translate is `$`
+		tplLookupName: 'l' // Default template helper name for translate method is `$`.
 	});
 
 You might have an app which isn't aware of supported languages, or tries to set the language according to a query string, http header or cookie. In this case you can set a fallback preference:
 
 	i18n.init({
+		fallbackLang: 'en-GB',
 		fallbackPrefs: {
 			'pt-BR': ['pt-PT']
 		}
 	});
 
-If Brazilian portuguese doesn't exist the app will fallback to portuguese.
+If Brazilian portuguese doesn't exist the app will fallback to portuguese before finally loading the fallbackLang (if defined).
 
 ## API
 
@@ -75,7 +75,7 @@ This is the internal lookup method before tokens are translated. Useful if you w
 
 ## Connect/Express middleware
 
-If you want to use the translate method in templates run this middleware before your routes.
+If you want to use the translate method in templates run this middleware before your routes:
 
 	app.use(i18n.helpers);
 
@@ -94,7 +94,7 @@ There is a special syntax for instances where you want tokens to resolve to anot
 	},
 	modeOfTransport: 'Your preferred mode of transport is by {0}'
 
-	i18n.t('modeOfTransport', '{transports.yacht'}); // Your preferred mode of transport is by Yacht
+	i18n.t('modeOfTransport', '{transports.yacht}'); // Your preferred mode of transport is by Yacht
 	
 ## Roadmap
 
