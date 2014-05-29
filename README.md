@@ -30,7 +30,7 @@ module.exports = {
 	var i18n = require('i18n-simple');
 
 	// Initialize the module.
-	i18n.init(options); // See Options section
+	i18n.init([options]); // See Options section
 
 	// Use the moduke.
 	i18n.t('site.title'); // Returns 'My Site'
