@@ -16,6 +16,11 @@ i18n.init = function (options) {
 		fallbackPrefs: {}
 	}, options);
 
+	// Ensure localPath has a trailing slash.
+	if (i18n.options.localPath.substr(-1) !== '/') {
+		i18n.options.localPath += '/';
+	}
+
 	if (i18n.options.setLang) {
 		i18n.setLang(i18n.options.setLang);
 	}
@@ -46,25 +51,36 @@ i18n.langExists = function (name, callback) {
 /**
  * Set the current language.
  * @param {String} name The language (file) name without extension.
- * @return {Boolean} True if a new language was set.
+ * @return {String} The language that is set.
  */
 i18n.setLang = function (name) {
 	'use strict';
 
+	if (i18n.currentLang === name) {
+		return i18n.currentLang;
+	}
+
 	if (i18n.langExists(name)) {
+		// We have the language.
 		i18n.lang = require(i18n.options.localePath + name);
-		return true;
+		i18n.currentLang = name;
 	} else if (i18n.options.fallbackPrefs[name]) {
+		// We don't have the language see if there is a fallback preference.
 		var fallbackLang = _.find(i18n.options.fallbackPrefs[name], i18n.langExists);
 
 		if (fallbackLang) {
-			console.log('setting lang to:', fallbackLang);
 			i18n.lang = require(i18n.options.localePath + fallbackLang);
-			return true;
+			i18n.currentLang = fallbackLang;
 		}
 	}
 
-	return false;
+	// We didn't manage to set a new language, see if we have a fallback.
+	if (i18n.currentLang === name && i18n.options.fallbackLang) {
+		i18n.lang = require(i18n.options.localePath + i18n.options.fallbackLang);
+		i18n.currentLang = i18n.options.fallbackLang;
+	}
+
+	return i18n.currentLang;
 };
 
 /**
