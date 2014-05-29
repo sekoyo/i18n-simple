@@ -7,17 +7,22 @@ i18n-simple is a fast, simple yet powerful string translator. It's goal is to pu
 Your translations should be:
 
 - `.js` files using node module export
-- Valid javascript objects
-- Support for `{1}`, `{2}` style tokens out the box
-- By default they go in a `locale/` folder in the located next to your server start script, e.g. `locale/en-US.js`
 
-	module.exports = {
-		site: {
-			title: 'My Site',
-			description: 'A site that is all mine'
-		},
-		bankBalance: 'Hi {1}, your balance is {2}',
-	};
+- Valid javascript objects
+
+- Support for `{1}`, `{2}` style tokens out the box
+
+- By default they go in a `locale/` folder located next to your server start script, e.g. `locale/en-US.js`
+
+<pre><code>
+module.exports = {
+	site: {
+		title: 'My Site',
+		description: 'A site that is all mine'
+	},
+	bankBalance: 'Hi {1}, your balance is {2}',
+};
+</code></pre>
 
 ## Setup
 
@@ -89,4 +94,4 @@ There is a special syntax for instances where you want tokens to resolve to anot
 	},
 	modeOfTransport: 'Your preferred mode of transport is by {0}'
 
-	i18n.t('modeOfTransport', '{transports.yacht'); // Your preferred mode of transport is by Yacht
+	i18n.t('modeOfTransport', '{transports.yacht'}); // Your preferred mode of transport is by Yacht
