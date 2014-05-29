@@ -1,0 +1,32 @@
+{
+  "name": "i18n-simple",
+  "version": "0.0.1",
+  "description": "A fast, simple yet powerful string translator",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "~2.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:DominicTobias/i18n-simple.git"
+  },
+  "keywords": [
+    "i18n",
+    "localization",
+    "translation",
+    "dot",
+    "notation"
+  ],
+  "author": "Dominic Tobias <dominic.tobias@gmail.com> (http://dominictobias.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DominicTobias/i18n-simple/issues"
+  },
+  "homepage": "https://github.com/DominicTobias/i18n-simple",
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
