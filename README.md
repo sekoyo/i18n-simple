@@ -96,7 +96,7 @@ There is a special syntax for instances where you want tokens to resolve to anot
 
 	i18n.t('modeOfTransport', '{transports.yacht'}); // Your preferred mode of transport is by Yacht
 	
-## Goals
+## Roadmap
 
 - Make it compatible with frontend
 - Make input reading generic/extensible and provide examples for json, requirejs, redis and memcached
