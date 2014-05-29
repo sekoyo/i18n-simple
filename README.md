@@ -94,7 +94,7 @@ There is a special syntax for instances where you want tokens to resolve to anot
 	},
 	modeOfTransport: 'Your preferred mode of transport is by {0}'
 
-	i18n.t('modeOfTransport', '{transports.yacht}'); // Your preferred mode of transport is by Yacht
+	i18n.t('modeOfTransport', '{transports.yacht}'); // 'Your preferred mode of transport is by Yacht'
 	
 ## Roadmap
 
