@@ -1,0 +1,20 @@
+{
+  "name": "i18n-simple-example",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DominicTobias/i18n-simple"
+  },
+  "author": "Dominic Tobias <dominic.tobias@gmail.com> (http://dominictobias.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.3.1",
+    "express3-handlebars": "~0.5.0"
+  }
+}
