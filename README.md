@@ -100,3 +100,8 @@ There is a special syntax for instances where you want tokens to resolve to anot
 
 - Make it compatible with frontend
 - Make input reading generic/extensible and provide examples for json, requirejs, redis and memcached
+- Function for plurals? e.g. `i18n.tp('There is {0} cat', 'There are {0} cats', 2)`?
+
+## Contributors
+
+[Michal Kot](https://github.com/michalkot)
