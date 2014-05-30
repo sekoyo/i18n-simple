@@ -16,9 +16,9 @@ i18n.init = function (options) {
 		fallbackPrefs: {}
 	}, options);
 
-	// Ensure localPath has a trailing slash.
-	if (i18n.options.localPath.substr(-1) !== '/') {
-		i18n.options.localPath += '/';
+	// Ensure localePath has a trailing slash.
+	if (i18n.options.localePath.slice(-1) !== '/') {
+		i18n.options.localePath += '/';
 	}
 
 	if (i18n.options.setLang) {
