@@ -32,7 +32,7 @@ module.exports = {
 	// Initialize the module.
 	i18n.init([options]); // See Options section
 
-	// Use the moduke.
+	// Use the module.
 	i18n.t('site.title'); // Returns 'My Site'
 	i18n.t('bankBalance', 'Bob', -1203);  // Returns 'Hi Bob, your balance is -1203'
 
